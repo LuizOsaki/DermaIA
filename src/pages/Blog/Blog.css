@@ -1,0 +1,339 @@
+
+.blog-titulo{
+    color: white!important;
+}
+
+.blog-body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background: #f5f6fa;
+  color: #222;
+}
+
+/* ===== SEÇÃO PRINCIPAL ===== */
+.blog-articlesSection {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.blog-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+
+
+
+.blog-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* HERO */
+.blog-heroBanner {
+  width: 100%;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #071a2c, #071a2c);
+  color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
+  border-radius: 0 0 30px 30px;
+}
+
+/* ===== GRID ===== */
+.blog-cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* ===== CARD ===== */
+.blog-articleCard {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.blog-articleCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.blog-cardImg {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-cardImg-prevencao {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.blog-cardImg-prevencao {
+  width: 100%;
+  object-fit: cover;
+  object-position: center top; /* foca mais no rosto */
+}
+
+
+.blog-cardBody {
+  padding: 20px;
+  text-align: left;
+}
+
+.blog-tag {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #e3e3e3;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.blog-tag.blog-purple { 
+  background: #e6d4ff; 
+  color: #5c2e99; 
+}
+
+.blog-tag.blog-green { 
+  background: #d9f6e5; 
+  color: #0a7745; 
+}
+
+.blog-cardTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.blog-cardDesc {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4rem;
+  margin-bottom: 25px;
+}
+
+.blog-cardActions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* BOTÃO */
+.blog-btnPrimary {
+  background: #4b7bfd;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  text-decoration: none;
+}
+
+.blog-btnPrimary:hover {
+  background: #365fe0;
+}
+
+/* ===== ALERTA CLIMÁTICO ===== */
+.blog-alerta-climatico {
+  width: 100%;
+  background: linear-gradient(90deg, #0b6623, #1e8f4a);
+  padding: 60px 0;
+  text-align: center;
+  color: #fff;
+  margin-top: 70px;
+  border-radius: 15px;
+}
+
+.blog-alerta-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.blog-alerta-climatico h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.blog-alerta-climatico p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.blog-btn-alerta {
+  display: inline-block;
+  background: #ffffff;
+  color: #0b6623;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+.blog-btn-alerta:hover {
+  background: #e9e9e9;
+}
+/* ===========================================
+   📱 TABLET (<= 900px)
+   =========================================== */
+@media (max-width: 900px) {
+  .blog-articlesSection {
+    padding: 40px 16px;
+  }
+
+  .blog-title {
+    font-size: 2rem;
+  }
+
+  .blog-subtitle {
+    font-size: 1rem;
+  }
+
+  .blog-cardImg {
+    height: 160px;
+  }
+
+  .blog-alerta-climatico h2 {
+    font-size: 1.7rem;
+  }
+
+  .blog-alerta-climatico p {
+    font-size: 1rem;
+  }
+}
+
+/* ===========================================
+   📱 MOBILE MÉDIO (<= 600px)
+   =========================================== */
+@media (max-width: 600px) {
+  .blog-heroBanner {
+    padding: 45px 16px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .blog-title {
+    font-size: 1.8rem;
+  }
+
+  .blog-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+
+  .blog-cardsGrid {
+    gap: 22px;
+    grid-template-columns: 1fr; /* força 1 por linha */
+  }
+
+  .blog-articleCard {
+    border-radius: 16px;
+  }
+
+  .blog-cardImg,
+  .blog-cardImg-prevencao {
+    height: 150px;
+  }
+
+  .blog-cardTitle {
+    font-size: 1.2rem;
+  }
+
+  .blog-cardDesc {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .blog-btnPrimary {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .blog-alerta-climatico {
+    padding: 40px 0;
+    margin-top: 50px;
+    border-radius: 12px;
+  }
+
+  .blog-alerta-climatico h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog-alerta-climatico p {
+    font-size: 0.95rem;
+  }
+
+  .blog-btn-alerta {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* ===========================================
+   📱 MOBILE PEQUENO (<= 430px)
+   =========================================== */
+@media (max-width: 430px) {
+  .blog-heroBanner {
+    padding: 35px 14px;
+    border-radius: 0 0 16px 16px;
+  }
+
+  .blog-title {
+    font-size: 1.6rem;
+  }
+
+  .blog-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .blog-cardImg,
+  .blog-cardImg-prevencao {
+    height: 130px;
+  }
+
+  .blog-cardBody {
+    padding: 16px;
+  }
+
+  .blog-cardDesc {
+    line-height: 1.35rem;
+  }
+
+  .blog-alerta-climatico h2 {
+    font-size: 1.35rem;
+  }
+
+  .blog-alerta-climatico p {
+    font-size: 0.9rem;
+  }
+
+  .blog-alerta-container {
+    padding: 0 14px;
+  }
+
+  .blog-btn-alerta {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+}

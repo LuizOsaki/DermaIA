@@ -1,0 +1,556 @@
+/* ===== HERO/PRINCIPAL ===== */
+.hero {
+  position: relative;
+  /*width: 100vw;*/
+  width:100%;
+  margin-left:0;
+  /*margin-left: calc(-50vw + 50%);*/
+  background: linear-gradient(180deg, #0a1727 0%, #0f2036 100%);
+  color: white;
+  padding: 80px 0 140px; /* Espaço para a onda */
+  overflow: hidden;
+}
+
+.heroInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.heroLeft {
+  flex: 1;
+  max-width: 580px;
+}
+
+.kicker {
+  font-weight: 800;
+  color: #2f90ff;
+  font-size: 36px;
+  margin: 0 0 8px;
+  line-height: 1.1;
+}
+
+.heroTitle {
+  font-size: 24px;
+  color: #ffd66a!important;
+  margin: 0 0 24px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.formCard {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.searchForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.searchForm input {
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+.searchForm input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+}
+
+.row input {
+  flex: 1;
+}
+
+.searchActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btnSearch {
+  background: white;
+  color: #0f2036;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  flex: 1;
+  transition: 0.3s;
+}
+
+.btnSearch:hover {
+  background: #f0f0f0;
+}
+
+.btnLocation {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.btnLocation:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+
+
+/* DERMAX */
+.heroRight {
+  width: 380px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ===== ANIMAÇÃO DO ROBÔ ===== */
+
+.robotWrap {
+  width: 340px;
+  opacity: 0;
+  transform: translateX(120%);
+  will-change: transform, opacity;
+}
+
+/* Desktop / padrão */
+.robotEnter {
+  animation: robotEnterRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes robotEnterRight {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Tablet e Mobile → entra de baixo */
+@media (max-width: 1024px) {
+  .robotWrap {
+    transform: translateY(60px);
+  }
+
+  .robotEnter {
+    animation: robotEnterBottom 1s ease-out forwards;
+  }
+
+  @keyframes robotEnterBottom {
+    from {
+      transform: translateY(60px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+/* A MÁSCARA VAI NA IMAGEM */
+.robotWrap img {
+  width: 100%;
+  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.5));
+  height: auto;
+  display: block;
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,1) 70%,
+    rgba(0,0,0,0) 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,1) 70%,
+    rgba(0,0,0,0) 100%
+  );
+}
+
+
+
+/* ===== ONDA DE TRANSIÇÃO ===== */
+.curveWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.curveSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+
+/* ===== CONTEÚDO ABAIXO ===== */
+.pageContent {
+  background: #ffffff;
+  position: relative;
+  z-index: 2;
+  padding: 60px 20px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+/* ===== MAPA + RESULTADOS ===== */
+.mapSection {
+  display: flex;
+  gap: 32px;
+}
+
+.mapCard {
+  flex: 1;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.map {
+  min-height: 300px;
+  /*width: 100%;*/
+}
+
+
+
+/* ===== RESULTADOS - ESTILO DA IMAGEM ===== */
+.resultsPanel {
+  width: 380px;
+  background: white;
+  border: 2px solid #e0e7f0;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  height: fit-content;
+}
+
+.searchBox {
+  background: #f8fbff;
+  border: 2px solid #e0e7f0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #ff8c42;
+  text-align: left;
+  outline: none;
+}
+
+.searchBox::placeholder {
+  color: #ff8c42;
+}
+
+.tabContainer {
+  display: flex;
+  background: white;
+  border: 2px solid #e0e7f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #7c8aa0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  background: #0f2036;
+  color: white;
+}
+
+.resultsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.resultItem {
+  background: #f8fbff;
+  border: 2px solid #e0e7f0;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: all 0.2s;
+}
+
+.resultItem:hover {
+  background: #f0f7ff;
+  border-color: #2f90ff;
+}
+
+.resultInfo {
+  flex: 1;
+  font-size: 13px;
+}
+
+.resultName {
+  font-weight: 700;
+  color: #0f2036;
+  font-size: 14.5px;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.resultAddress,
+.resultPhone {
+  color: #7c8aa0;
+  font-size: 12.5px;
+  margin: 3px 0;
+  line-height: 1.3;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+.public {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.private {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+
+.routeBtn {
+  background: #2f90ff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(47, 144, 255, 0.3);
+}
+
+.routeBtn:hover {
+  background: #1a78e0;
+}
+
+.noResults {
+  text-align: center;
+  color: #9e9e9e;
+  font-size: 14px;
+  margin: 20px 0;
+  font-style: italic;
+}
+
+/* Responsivo */
+@media (max-width: 1000px) {
+  .resultsPanel {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+}
+
+/* ----------------------------- */
+/*   RESPONSIVIDADE GERAL       */
+/* ----------------------------- */
+
+/* TABLET / MÉDIO (até 1024px) */
+@media (max-width: 1024px) {
+
+  .heroInner {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .heroLeft {
+    max-width: 100%;
+  }
+
+  .heroRight {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .robotWrap {
+    width: 260px;
+  }
+
+  .mapSection {
+    flex-direction: column;
+  }
+
+  .resultsPanel {
+    width: 100%;
+    order: -1; /* sobe a lista acima do mapa */
+  }
+
+  .map {
+    height: 380px;
+  }
+}
+
+/* CELULAR (até 768px) */
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 60px 0 100px;
+  }
+
+  .kicker {
+    font-size: 26px;
+  }
+
+  .heroTitle {
+    font-size: 18px;
+  }
+
+  .searchForm input {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .searchActions {
+    flex-direction: column;
+  }
+
+  .btnSearch {
+    width: 100%;
+  }
+
+  .btnLocation {
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+  }
+
+  .robotWrap {
+    width: 220px;
+  }
+
+  .pageContent {
+    padding: 40px 15px;
+  }
+
+  .resultsPanel {
+    padding: 16px;
+  }
+
+  .resultItem {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .routeBtn {
+    width: 100%;
+    text-align: center;
+
+  .map {
+    min-height: 320px;
+  }
+  }
+}
+
+/* CELULAR PEQUENO (até 480px) */
+@media (max-width: 480px) {
+
+  .kicker {
+    font-size: 22px;
+  }
+
+  .heroTitle {
+    font-size: 16px;
+  }
+
+  .robotWrap {
+    width: 180px;
+  }
+
+  .searchForm input {
+    font-size: 13px;
+  }
+
+  .resultsList {
+    max-height: 350px;
+  }
+
+  .resultName {
+    font-size: 14px;
+  }
+
+  .resultAddress,
+  .resultPhone {
+    font-size: 12px;
+  }
+
+  .map {
+    height: 300px;
+  }
+}

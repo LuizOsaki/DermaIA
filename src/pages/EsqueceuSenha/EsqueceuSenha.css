@@ -1,0 +1,316 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================================
+   CONTAINER GERAL
+================================ */
+.forgot-container {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #ffffff;
+  padding: 20px;
+}
+
+/* ================================
+   CAIXA ESQUERDA
+================================ */
+.forgot-leftBox {
+  width: 55%;
+  max-width: 700px;
+  background: #f6f9ff;
+
+  padding: 50px 60px;
+  border-radius: 25px 0 0 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+  /* NÃO DEIXA CRESCER QUANDO A MENSAGEM APARECE */
+  height: 520px;
+  max-height: 520px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* LOGO */
+.forgot-logo {
+  width: 150px;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+/* SUBTÍTULO */
+.forgot-subtitle {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* MENSAGEM */
+.forgot-message {
+  text-align: center;
+  color: #1a3d7c;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* FORMULÁRIO */
+.forgot-form {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* INPUT + ÍCONE */
+.forgot-inputGroup {
+  display: flex;
+  align-items: center;
+  border: 2px solid #000;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  padding: 10px 15px;
+  background: white;
+}
+
+.forgot-label {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #000;
+}
+
+.forgot-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+}
+
+/* BOTÃO */
+.forgot-btnReset {
+  width: 100%;
+  background: #153b7c;
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.forgot-btnReset:hover {
+  background: #0e2a5a;
+}
+
+/* VOLTAR PARA LOGIN */
+.forgot-backLogin {
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+  font-size: 16px;
+  color: #1f3cff;
+  text-decoration: none;
+}
+
+.forgot-backLogin:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   LADO DIREITO
+================================ */
+.forgot-rightSide {
+  width: 40%;
+  background: url("/assets/img-fundo.png") no-repeat center;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 0 25px 25px 0;
+  padding: 30px;
+}
+
+.forgot-robotImg {
+  width: 104%;        /* reduzido horizontalmente */
+  max-width: 468px;  /* limite para não estourar */
+}
+
+/* ================================
+   RESPONSIVO
+================================ */
+@media (max-width: 950px) {
+  .forgot-container {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .forgot-leftBox {
+    width: 100%;
+    border-radius: 25px;
+    height: auto;
+    max-height: none;
+  }
+
+  .forgot-rightSide {
+    display: none;
+  }
+}
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+/* —— Tablets e telas médias —— */
+@media (max-width: 950px) {
+  .forgot-container {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .forgot-leftBox {
+    width: 100%;
+    border-radius: 25px;
+    height: auto;
+    max-height: none;
+    padding: 40px 30px;
+  }
+
+  .forgot-rightSide {
+    display: none;
+  }
+
+  .forgot-logo {
+    width: 130px;
+  }
+
+  .forgot-subtitle {
+    font-size: 17px;
+  }
+
+  .forgot-inputGroup {
+    padding: 12px;
+  }
+}
+
+/* —— Smartphones padrão —— */
+@media (max-width: 600px) {
+  .forgot-leftBox {
+    padding: 30px 22px;
+  }
+
+  .forgot-logo {
+    width: 120px;
+  }
+
+  .forgot-subtitle {
+    font-size: 16px;
+  }
+
+  .forgot-inputGroup {
+    padding: 10px 12px;
+  }
+
+  .forgot-label {
+    font-size: 18px;
+  }
+
+  .forgot-input {
+    font-size: 15px;
+  }
+
+  .forgot-btnReset {
+    padding: 14px;
+    font-size: 17px;
+  }
+
+  .forgot-backLogin {
+    font-size: 15px;
+  }
+}
+
+/* —— Celulares menores (iPhone XR, Samsung Axx, 360–420px) —— */
+@media (max-width: 420px) {
+  .forgot-leftBox {
+    padding: 26px 18px;
+  }
+
+  .forgot-logo {
+    width: 105px;
+    margin-bottom: 15px;
+  }
+
+  .forgot-subtitle {
+    font-size: 15px;
+  }
+
+  .forgot-inputGroup {
+    margin-bottom: 20px;
+    padding: 9px 10px;
+    border-radius: 13px;
+  }
+
+  .forgot-label {
+    font-size: 16px;
+  }
+
+  .forgot-input {
+    font-size: 14px;
+  }
+
+  .forgot-btnReset {
+    font-size: 16px;
+    padding: 13px;
+    border-radius: 40px;
+  }
+}
+
+/* —— Celulares muito pequenos (iPhone SE, 320px) —— */
+@media (max-width: 340px) {
+
+  .forgot-leftBox {
+    padding: 22px 14px;
+    border-radius: 18px;
+  }
+
+  .forgot-logo {
+    width: 95px;
+  }
+
+  .forgot-subtitle {
+    font-size: 14px;
+  }
+
+  .forgot-inputGroup {
+    padding: 8px 10px;
+  }
+
+  .forgot-label {
+    font-size: 15px;
+  }
+
+  .forgot-input {
+    font-size: 13.5px;
+  }
+
+  .forgot-btnReset {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .forgot-backLogin {
+    font-size: 14px;
+  }
+}

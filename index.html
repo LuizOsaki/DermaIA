@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DermaIA</title>
+    <link rel="icon" type="image/x-icon" href="/assets/logobranca.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- VLibras Widget -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- Vite inject -->
+    <script type="module" src="/src/main.jsx"></script>
+
+    <script>
+(function(d){
+  var s = d.createElement("script");
+  s.src = "https://cdn.userway.org/widget.js";
+  s.setAttribute("data-account", "SEU_ID_AQUI");
+
+  // 👇 AQUI: Define a posição do ícone
+  s.setAttribute("data-position", "center-left");
+
+  d.body.appendChild(s);
+})(document);
+</script>
+
+  </body>
+</html>

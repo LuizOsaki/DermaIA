@@ -1,0 +1,445 @@
+/* BANNER */
+.banner {
+  position: relative;
+}
+.banner-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+.banner-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+.sobre-banner-title {
+  font-family: "Georgia", serif;
+  font-size: 52px;
+  margin-bottom: 16px;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  color: #F4A300!important;
+}
+.banner-text {
+  max-width: 960px;
+  line-height: 1.6;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 18px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+
+/* ========= MISSÃO / VISÃO / VALORES ========= */
+
+h2 {
+  color:white;
+}
+
+.mission-vision-section {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #0a1a3d, #1e1a4d, #2a1050);
+  text-align: center;
+}
+
+.cards-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.info-card {
+  width: 280px;
+  min-height: 180px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 180px;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  border-radius: 24px;
+}
+
+/* Hover só em desktop */
+@media (hover: hover) {
+  .info-card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Flip via React (mobile + desktop) */
+.info-card.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Frente e verso */
+.card-front1,
+.card-back1 {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 24px;
+  padding: 20px;
+  background: white;
+  border: 3px solid #3b82f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front1 img {
+  width: 48px;
+  margin-bottom: 12px;
+}
+
+.card-front1 h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+.card-back1 {
+  transform: rotateY(180deg);
+  font-size: 15px;
+  line-height: 1.6;
+  color: #1e3a8a;
+  text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .cards-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .card-inner {
+    min-height: 220px;
+  }
+}
+
+
+
+/* ODS */
+.ods-section { padding:28px 0; background:var(--light-blue); }
+
+.section-heading {
+  font-size:26px;
+  font-weight:800;
+  color:#07112a;
+  text-align:center;
+  margin-bottom:18px;
+}
+.ods-grid { display:flex; gap:18px; justify-content:center; align-items:center; flex-wrap:wrap; padding:8px 0 22px; }
+.ods-item img { width:150px; height:150px; object-fit:contain; border-radius:12px; transition: all 0.3s ease; box-shadow:0 4px 10px rgba(0, 0, 0, 0.05)}
+
+/* Animação de hover */
+.ods-item img:hover {
+  transform: scale(1.15) translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+
+
+/* ========= EQUIPE - CARDS HORIZONTAIS ========= */
+.team-section {
+  padding: 80px 20px;
+  background-color: #f8fbff;
+  text-align: center;
+}
+
+.team-section h2 {
+  font-size: 2.2rem;
+  color: #1a1a1a;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+.team-container-vertical {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* CARD HORIZONTAL */
+.team-card-horizontal {
+  width: 100%;
+  max-width: 580px;
+  height: 180px;
+  background: #0b1a44;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.team-card-horizontal:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.22);
+  z-index: 10;
+}
+
+/* LADO ESQUERDO - FUNDO COM ÍCONES */
+.team-card-horizontal .left-side {
+  width: 40%;
+  background: url("../assets/img-fundo.png") center/cover no-repeat #dbe8ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* CÍRCULO DA FOTO */
+.team-card-horizontal .photo-circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.team-card-horizontal .photo-circle img {
+  width: 125%;
+  height: 125%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+.team-card-horizontal:hover .photo-circle {
+  transform: scale(1.08);
+}
+
+/* LADO DIREITO - INFORMAÇÕES */
+.team-card-horizontal .right-side {
+  flex: 1;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.team-card-horizontal .name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.team-card-horizontal .role {
+  font-size: 0.95rem;
+  color: #b0c4de;
+  margin: 0 0 16px;
+  line-height: 1.4;
+}
+
+.team-card-horizontal .icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.team-card-horizontal .icons a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: grid;
+  place-items: center;
+  transition: all 0.3s ease;
+}
+
+.team-card-horizontal .icons a:hover {
+  background: white;
+  color: #0b1a44;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.team-card-horizontal .icons a svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+
+.team-card-horizontal .icons a:hover svg {
+  fill: #0b1a44 !important;
+  color: #0b1a44 !important;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .team-container-vertical {
+    grid-template-columns: 1fr;
+  }
+  .team-card-horizontal {
+    height: 160px;
+  }
+  .team-card-horizontal .left-side {
+    width: 35%;
+  }
+  .team-card-horizontal .photo-circle {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-img {
+    height: 320px;
+  }
+
+  .sobre-banner-title {
+    font-size: 32px;
+    letter-spacing: 1px;
+  }
+@media (max-width: 768px) {
+
+  .mission-vision-section {
+    padding: 60px 20px;
+  }
+
+  .mission-vision-section .cards-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .mission-vision-section .info-card {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .mission-vision-section .card-inner {
+    height: auto;
+    padding: 20px;
+  }
+
+  .mission-vision-section .card-front1,
+  .mission-vision-section .card-back1 {
+    padding: 22px;
+    font-size: 14px;
+  }
+}
+
+  .banner-text {
+    font-size: 14px;
+    padding: 14px 18px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .mission-vision-section {
+    padding: 60px 20px;
+  }
+
+  .mission-vision-section .cards-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .mission-vision-section .info-card {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .mission-vision-section .card-inner {
+    height: auto;
+    padding: 20px;
+  }
+
+  .mission-vision-section .card-front1,
+  .mission-vision-section .card-back1 {
+    padding: 22px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ods-item img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .team-card-horizontal {
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .team-card-horizontal .left-side {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+  }
+
+  .team-card-horizontal .photo-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .team-card-horizontal .right-side {
+    padding: 20px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .sobre-banner-title {
+    font-size: 26px;
+  }
+  .banner-text {
+    font-size: 13px;
+  }
+  .team-card-horizontal .photo-circle {
+    width: 85px;
+    height: 85px;
+  }
+}

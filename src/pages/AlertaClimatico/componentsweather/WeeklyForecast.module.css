@@ -1,0 +1,16 @@
+.container { display: flex; flex-direction: column; gap: 0.8rem; margin: 2rem 0; }
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  color: white;
+}
+.day { font-weight: 600; flex: 1; }
+.rain { font-size: 0.9rem; color: #88eaff; }
+.condition { display: flex; align-items: center; gap: 0.5rem; flex: 2; }
+.condition img { width: 36px; }
+.temp { font-weight: 600; text-align: right; flex: 1; }

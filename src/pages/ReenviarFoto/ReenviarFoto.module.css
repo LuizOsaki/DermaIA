@@ -1,0 +1,201 @@
+.page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8faff 0%, #eef3ff 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+  padding:80px 20px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+  display:flex;
+  flex-direction:row;
+  background: white;
+  border-radius: 28px;
+  padding: 48px 40px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  position: relative;
+  z-index: 2;
+}
+
+/* Título com ícone */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.alertIcon {
+  font-size: 36px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #dc2626;
+  margin: 0;
+}
+
+/* Foto */
+.photoSection {
+  margin: 32px 0;
+}
+
+.photoTitle {
+  font-size: 19px;
+  color: #dc2626;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.photoWrapper {
+  display: inline-block;
+  padding: 10px;
+  border: 5px solid #dc2626;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.15);
+}
+
+.photo {
+  width: 340px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+}
+
+.placeholder {
+  width: 340px;
+  height: 340px;
+  background: #f1f5f9;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 16px;
+}
+
+/* Textos */
+.message {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #475569;
+  margin: 24px 0 16px;
+}
+
+.helpText {
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Botões */
+.actions {
+  margin-top: 40px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnBack {
+  padding: 16px 32px;
+  border-radius: 16px;
+  background: #f8fafc;
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid #e2e8f0;
+  transition: all 0.25s ease;
+}
+
+.btnBack:hover {
+  background: #eef2ff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 105, 235, 0.15);
+}
+
+.btnRetry {
+  padding: 16px 36px;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.btnRetry:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+}
+
+/* Robô no canto (igual Figma) */
+.robo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+  .container {
+    padding: 36px 24px;
+    border-radius: 22px;
+  }
+  .title { font-size: 26px; }
+  .photoWrapper { padding: 8px; }
+  .photo { width: 280px; }
+  .actions { flex-direction: column; }
+  .btnRetry, .btnBack { width: 100%; justify-content: center; }
+  .robo { width: 80px; height: 80px; bottom: 15px; right: 15px; }
+}
+
+
+
+
+
+
+/* GRID DE 2 COLUNAS */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Colunas */
+.leftColumn,
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}

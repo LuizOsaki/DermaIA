@@ -1,0 +1,619 @@
+/* ===========================
+   RESET / BASE
+   =========================== */
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root{
+  --bg: #f3f7ff;
+  --card-bg: #ffffff;
+  --primary: #3f63ff; /* botão e acentos */
+  --muted: #6b7280;
+  --title: #1f2b56;
+  --shadow: 0 10px 24px rgba(31,43,86,0.08);
+  --soft-shadow: 0 6px 16px rgba(31,43,86,0.06);
+  --radius: 12px;
+  --radius-card: 14px;
+  --accent: #e9eefc;
+}
+
+/* ===========================
+   CONTAINER PRINCIPAL
+   =========================== */
+.ranking-container{
+  width: 100%;
+  max-width: 980px;
+  margin: 28px auto;
+  padding: 28px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* TITULO */
+.ranking-title{
+  color: var(--title)!important;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.ranking-subtitle{
+  margin: 0 0 18px 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ===========================
+   TOP 3
+   =========================== */
+.ranking-top3{
+  display: flex;
+  gap: 18px;
+  align-items: flex-end;
+  margin-bottom: 22px;
+  flex-wrap: nowrap;
+  overflow: auto;
+}
+
+.top-card{
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 18px;
+  width: calc(33.333% - 12px);
+  min-width: 220px;
+  text-align: center;
+  box-shadow: var(--soft-shadow);
+  position: relative;
+  border: 1px solid rgba(63,99,255,0.05);
+}
+
+.top-card .medal{
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.top-avatar{
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: inline-block;
+  margin-bottom: 12px;
+  border: 6px solid var(--accent);
+  background: #fff;
+}
+
+.top-card h3{
+  margin: 6px 0 4px 0;
+  font-size: 16px;
+  color: #222;
+  font-weight: 700;
+}
+
+.top-value{
+  margin: 0;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* ===========================
+   RANKING COMPLETO (LIST)
+   =========================== */
+.ranking-list-title{
+  color: var(--title);
+  font-size: 20px;
+  margin: 20px 0 12px 0;
+  font-weight: 700;
+}
+
+/* container da lista */
+.ranking-list{
+  display: grid;
+  gap: 14px;
+  margin-bottom: 60px;
+}
+
+/* cada item */
+.ranking-item{
+  display: grid;
+  grid-template-columns: 56px 56px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  background: var(--card-bg);
+  border-radius: var(--radius-card);
+  padding: 16px 18px;
+  box-shadow: var(--soft-shadow);
+  border: 1px solid rgba(63,99,255,0.04);
+}
+
+/* posicao */
+.ranking-position{
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 18px;
+  text-align: center;
+}
+
+/* avatar pequeno circulo */
+.ranking-avatar{
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+}
+
+/* nome e info */
+.ranking-info h4{
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* pontos do lado direito */
+.ranking-points{
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 16px;
+  text-align: right;
+}
+
+/* ===========================
+   BOTÃO FLUTUANTE (ADD)
+   =========================== */
+/* POSICIONADO NO CANTO INFERIOR-ESQUERDO (pra não cobrir chatbot da direita) */
+.add-button{
+  position: fixed;
+  left: 22px;               /* <-- aqui: botão na esquerda */
+  bottom: 22px;
+  z-index: 1200;
+  width: 157px;
+  height: 77px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, var(--primary), #2f4efe);
+  color: white;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: 0 12px 30px rgba(63,99,255,0.22);
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s;
+}
+
+.add-button:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(63,99,255,0.26);
+}
+
+/* ===========================
+   MODAL
+   =========================== */
+.modal-bg{
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 22, 38, 0.42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-box{
+  width: 360px;
+  max-width: calc(100% - 40px);
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 18px 40px rgba(31,43,86,0.18);
+  position: relative;
+  border: 1px solid rgba(63,99,255,0.04);
+}
+
+/* X (fechar) */
+.modal-close-x{
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #7a7f8f;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  transition: background 0.12s, color 0.12s;
+}
+
+.modal-close-x:hover{
+  background: rgba(0,0,0,0.04);
+  color: #333;
+}
+
+/* Título modal */
+.modal-box h3{
+  margin: 0 0 14px 0;
+  font-size: 20px;
+  text-align: left;
+  color: var(--title);
+  font-weight: 700;
+}
+
+/* lista de opções */
+.opcoes-list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* label/opcao */
+.opcao{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #222;
+  user-select: none;
+}
+
+/* checkbox nativo estilizado levemente */
+.opcao input[type="checkbox"]{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--primary); /* moderno em navegadores que suportam */
+  flex-shrink: 0;
+}
+
+/* texto complementar dos pontos */
+.opcao::after{
+  content: "";
+}
+
+/* BOTÃO ADICIONAR PONTOS */
+.btn-add{
+  display: block;
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px 14px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(63,99,255,0.18);
+  transition: transform 0.12s ease, filter 0.12s;
+}
+
+.btn-add:active{
+  transform: translateY(1px);
+}
+
+.btn-add:hover{
+  filter: brightness(1.03);
+}
+
+/* ===========================
+   RESPONSIVIDADE
+   =========================== */
+@media (max-width: 880px){
+  .ranking-top3{
+    gap: 12px;
+  }
+
+  .top-card{
+    width: 280px;
+    min-width: 200px;
+  }
+
+  .ranking-item{
+    grid-template-columns: 44px 50px 1fr auto;
+    padding: 12px 14px;
+  }
+
+  .ranking-container{
+    padding: 18px;
+  }
+}
+
+/* ===========================
+   FINE TUNES / ACCESSIBILIDADE
+   =========================== */
+button:focus, input:focus {
+  outline: 3px solid rgba(63,99,255,0.14);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* evita quebra de texto no nome e lista */
+.ranking-info h4 {
+  word-break: break-word;
+}
+
+/* garante que modal fique visível em telas pequenas */
+@media (max-height: 520px){
+  .modal-box{
+    max-height: 92vh;
+    overflow: auto;
+    padding: 16px;
+  }
+}
+
+/* OVERLAY ESCURO DE FUNDO */
+.intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(3px);
+}
+
+/* CARD DE INTRODUÇÃO */
+.intro-card {
+  width: 90%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 28px 32px;
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  animation: introShow 0.3s ease;
+}
+
+@keyframes introShow {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.intro-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: #333!important;
+  text-align: center;
+}
+
+.intro-card p {
+  color: #555!important;
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+.intro-card ul {
+  margin: 12px 0;
+  padding-left: 18px;
+}
+
+.intro-card li {
+  color: #444;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* BOTÃO */
+.intro-btn {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 14px;
+
+  background: #4e73ff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.intro-btn:hover {
+  background: #3c5ee6;
+  transform: translateY(-2px);
+}
+
+.intro-btn:active {
+  transform: scale(0.97);
+}
+/* ==========================================
+   RESPONSIVIDADE REAL (MOBILE FIRST)
+   ========================================== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .ranking-container {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .ranking-top3 {
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .top-card {
+    width: 240px;
+    min-width: 200px;
+  }
+
+  .ranking-list {
+    grid-template-columns: 1fr;
+  }
+
+  .ranking-item {
+    grid-template-columns: 44px 50px 1fr auto;
+    padding: 12px 14px;
+  }
+}
+
+/* Smartphones grandes (600px) */
+@media (max-width: 600px) {
+  .ranking-title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .ranking-subtitle {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .ranking-container {
+    padding: 16px;
+  }
+
+  .ranking-top3 {
+    gap: 10px;
+  }
+
+  .top-card {
+    width: 180px;
+    min-width: 180px;
+    padding: 14px;
+  }
+
+  .top-avatar {
+    width: 72px;
+    height: 72px;
+    border-width: 4px;
+  }
+
+  .ranking-item {
+    grid-template-columns: 36px 46px 1fr auto;
+    gap: 12px;
+    padding: 12px 12px;
+  }
+
+  .ranking-info h4 {
+    font-size: 15px;
+  }
+
+  .ranking-points {
+    font-size: 15px;
+  }
+
+  /* Botão flutuante reduzido */
+  .add-button {
+    width: 120px;
+    height: 60px;
+    font-size: 22px;
+    left: 16px;
+    bottom: 16px;
+  }
+}
+
+/* Smartphones pequenos (430px ↓) */
+@media (max-width: 430px) {
+
+  .ranking-container {
+    padding: 14px;
+  }
+
+  .top-card {
+    width: 160px;
+    min-width: 160px;
+    padding: 12px;
+  }
+
+  .top-avatar {
+    width: 64px;
+    height: 64px;
+    border-width: 3px;
+  }
+
+  .ranking-item {
+    grid-template-columns: 30px 42px 1fr auto;
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .ranking-position {
+    font-size: 15px;
+  }
+
+  .ranking-info h4 {
+    font-size: 14px;
+  }
+
+  .ranking-points {
+    font-size: 14px;
+  }
+
+  .add-button {
+    width: 105px;
+    height: 55px;
+    font-size: 18px;
+    left: 14px;
+    bottom: 14px;
+  }
+
+  .modal-box {
+    width: 95%;
+    padding: 18px;
+  }
+
+  .modal-box h3 {
+    font-size: 18px;
+  }
+
+  .opcao {
+    font-size: 15px;
+  }
+
+  .btn-add {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+/* Ultra-small phones (360px - 320px) */
+@media (max-width: 360px) {
+  .ranking-item {
+    grid-template-columns: 26px 38px 1fr auto;
+  }
+
+  .top-card {
+    min-width: 150px;
+  }
+
+  .add-button {
+    width: 95px;
+    height: 50px;
+    font-size: 16px;
+  }
+}
+
+/* Evita scroll horizontal em 100% dos celulares */
+@media (max-width: 600px) {
+  body, html {
+    overflow-x: hidden;
+  }
+}

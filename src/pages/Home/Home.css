@@ -1,0 +1,844 @@
+/* ===========================
+   Home.module.css
+   =========================== */
+
+/* --- Variáveis (opcional, facilita alterações futuras) --- */
+:root {
+  --blue-900: #0A142F;
+  --blue-800: #0A2E73;
+  --accent: #f97316;
+  --primary: #2563EB;
+  --btn-hero-w: 200px;
+}
+
+/* === SEÇÃO BANNER/VÍDEO === */
+/* Seção principal (hero) */
+.hero-main {
+  position: relative;
+  width: 100%;
+  height: 80vh; /* mantém visual desktop */
+  min-height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff;
+}
+
+/* Vídeo de fundo */
+.hero-main-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantém proporção e cobre o fundo */
+  z-index: 0;
+  filter: brightness(0.55); /* escurece um pouco pra o texto destacar */
+}
+
+/* Conteúdo sobreposto */
+/* mesmo layout desktop (padding-left:80px; max-width similar) */
+.hero-main {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  padding-left: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Tipografia hero */
+.hero-main h3 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.hero-main h3 span {
+  color: #f97316;
+}
+
+/* Botão hero */
+.btn-hero {
+  width: var(--btn-hero-w);
+  display: inline-block;
+  background-color: #3b82f6;
+  color: #fff;
+  padding: 14px 34px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 50px;
+}
+
+.btn-hero:hover {
+  background-color: #2563eb;
+  transform: scale(1.05);
+}
+
+/* ==== FUNCIONALIDADES ==== */
+.features h3 {
+  color: var(--blue-900);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.feature-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feature-buttons a {
+  background-color: white;
+  border: 2px solid var(--primary);
+  color: var(--blue-900);
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.feature-buttons a:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.feature-buttons i {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.feature-buttons a:hover i {
+  color: #fff;
+}
+
+/* ==== CARROSSEL ==== */
+
+.carousel-container {
+  position: relative;
+  max-width: 520px;
+  width: 100%;
+  height: 340px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-text {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  color: white;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-text h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.carousel-text p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.carousel-text .btn-primary {
+  background-color: var(--blue-900);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 14px 45px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background-color: #1E63E9;
+  color: #fff;                     
+  border: none;
+  border-radius: 25px;
+  padding: 10px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(30, 99, 233, 0.25);
+  transition: all 0.3s ease;
+  text-decoration:none;
+  margin-top:50px ;
+}
+
+.btn-primary:hover {
+  background-color: #0F4EDB;       /* azul um pouco mais escuro no hover */
+  box-shadow: 0px 6px 10px rgba(30, 99, 233, 0.35);
+  transform: translateY(-2px);     /* leve animação ao passar o mouse */
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.3s;
+  z-index: 3;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+
+/* Animação do carrossel (mantida) */
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  20% {
+    transform: translateX(0%);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  45% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  70% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-300%);
+  }
+  95% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* ===== SEÇÃO SAÚDE E BEM-ESTAR ===== */
+.saude-bemestar {
+  background-color: #dfe8f3;
+  padding: 80px 10%;
+  border-radius: 20px;
+}
+
+.saude-bemestar h3 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #0A2E73;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.saude-bemestar p {
+  color: #0A2E73;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Container dos cards */
+.saude-bemestar .cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Estilo individual dos cards */
+.saude-bemestar .card {
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 260px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.saude-bemestar .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagem superior */
+.saude-bemestar .card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* Título e texto */
+.saude-bemestar .card h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--blue-900);
+  margin: 15px 0 8px 0;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.saude-bemestar .card p {
+  color: #333;
+  font-size: 0.95rem;
+  padding: 0 20px 20px 20px;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.card {
+  text-decoration: none;
+}
+
+/* === SOBRE NÓS === */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 5%;
+  background-color: #fff;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+}
+
+.sobre-nos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dfe8f3;
+}
+
+/* Container com imagens/textos sobre nós */
+.sobre-nos-container {
+  display: flex;
+  justify-content: center;
+  padding: 80px 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Caixa de texto sobre a imagem - originalmente absolutely positioned */
+/* Absoluto no desktop para preservar visual */
+.sobre-nos-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-165%, -47%);
+  background-color: #0d2b5b;
+  color: white;
+  border-radius: 15px;
+  padding: 35px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+  justify-content: center;
+}
+
+.img1 {
+  width: 480px;
+  justify-content: center;
+  border-radius: 20px;
+  display: block;
+}
+
+.sobre-nos-texto h3 {
+  font-size: 1.8rem;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.sobre-nos-texto p {
+  justify-content: center;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.btn-sobre {
+  background-color: white;
+  color: #0d2b5b;
+  font-weight: bold;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.btn-sobre:hover {
+  background-color: #dce9ff;
+}
+
+.sobre-nos-imagens {
+  justify-content: center;
+  position: relative;
+  width: 900px; /* para desktop */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.sobre-nos-imagens img {
+  justify-content: center;
+  width: 70%;
+  border-radius: 15px;
+  object-fit: cover;
+  margin-left: 150px;
+  display: block;
+}
+
+/* === PLANOS === */
+.planos-section {
+  text-align: center;
+  padding: 80px 5%;
+  background-color: #f9fafc;
+}
+
+.planos-section h2 {
+  color: #0A2E6C;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.planos-section p {
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+.planos-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* ==== CARD ==== */
+.plano-card {
+  width: 310px;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.plano-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ==== TOPO AZUL ==== */
+.plano-top {
+  background-color: #0A2E6C;
+  color: white;
+  padding: 25px 15px 20px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.plano-top h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* ==== BOTÃO SAIBA MAIS ==== */
+.btn-saiba {
+  background-color: white;
+  color: #0A2E6C;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 24px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn-saiba:hover {
+  background-color: #e6e9ef;
+}
+
+/* ==== LISTA ==== */
+.plano-card ul {
+  list-style: none;
+  text-align: left;
+  padding: 25px 35px;
+  flex: 1;
+}
+
+.plano-card li {
+  color: #0A142F;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plano-card li::before {
+  content: "✔";
+  color: #22c55e;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* ==== PARTE INFERIOR ==== */
+.plano-bottom {
+  background-color: #0A2E6C;
+  text-align: center;
+  padding: 25px 0;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-top: none;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  position: relative;
+}
+
+.plano-bottom p {
+  margin: 0;
+  color: white;
+}
+
+.plano-bottom span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: block;
+}
+
+/* Remove qualquer pseudo-elemento anterior */
+.plano-bottom::before,
+.plano-bottom::after {
+  display: none !important;
+}
+
+/* === CONTATO === */
+.contato {
+  background-color: #ffffff;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.contato-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/* Imagem à esquerda */
+.contato-img {
+  flex: 1;
+}
+
+.contato-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Texto à direita */
+.contato-info {
+  flex: 1;
+  background-color: #0A2E73;
+  color: #fff;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contato-info h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 25px;
+}
+
+.contato-info h3 span {
+  color: #F4A300;
+}
+
+.contato-info p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.contato-info strong {
+  font-weight: 600;
+}
+
+/* ===========================
+   RESPONSIVIDADE (media queries)
+   As regras aqui garantem que o visual desktop
+   fique inalterado e que o mobile/tablet se ajuste.
+   =========================== */
+
+/* Ajustes gerais para telas médias */
+@media (max-width: 1100px) {
+  .hero-main {
+    padding-left: 48px;
+    max-width: 520px;
+  }
+
+  .hero-main h3 {
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+  }
+
+  .img1 {
+    width: 420px;
+  }
+
+  .sobre-nos-imagens img {
+    margin-left: 110px;
+    width: 75%;
+  }
+}
+
+/* Tablets e pequenos laptops */
+@media (max-width: 900px) {
+  /* Hero: reduzir altura e centralizar um pouco */
+  .hero-main {
+    height: 60vh;
+    min-height: 360px;
+    padding-left: 32px;
+    max-width: 460px;
+  }
+
+  .hero-main h3 {
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  }
+
+  .btn-hero {
+    width: 180px;
+    padding: 12px 28px;
+  }
+
+  /* Carrossel ajusta altura para caber melhor */
+  .carousel-container {
+    height: 300px;
+  }
+
+  /* Sobre nós: transforma fluxo para evitar sobreposição */
+  .sobre-nos-container {
+    padding: 40px 0;
+  }
+
+  /* Mantém caixa de texto sobre a imagem, mas reposiciona menos fora do container */
+  .sobre-nos-texto {
+    transform: translate(-120%, -47%);
+    width: 290px;
+    padding: 28px;
+  }
+
+  .sobre-nos-imagens {
+    width: 100%;
+  }
+
+  .sobre-nos-imagens img {
+    margin-left: 100px;
+    width: 72%;
+  }
+
+  /* Planos: cartões ficam menores visualmente */
+  .plano-card {
+    width: 290px;
+  }
+}
+
+/* Mobile (celular) */
+@media (max-width: 600px) {
+  /* Hero ocupa menos altura e o conteúdo fica mais central */
+  .hero-main {
+    height: 50vh;
+    min-height: 300px;
+    padding-left: 20px;
+    max-width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .hero-main h3 {
+    font-size: clamp(1.4rem, 6vw, 2.2rem);
+    line-height: 1.15;
+  }
+
+  .btn-hero {
+    width: 160px;
+    padding: 10px 22px;
+    margin-top: 20px;
+  }
+
+  /* Carrossel fica mais compacto */
+  .carousel-container {
+    height: 220px;
+  }
+
+  /* Saúde e cards: centralizar e ajustar gap */
+  .saude-bemestar {
+    padding: 40px 6%;
+    border-radius: 12px;
+  }
+
+  .saude-bemestar .cards {
+    gap: 16px;
+  }
+
+  /* Sobre nós: remover absolute para evitar overflow -> torna caixa de texto parte do fluxo */
+  .sobre-nos-texto {
+    position: static;
+    transform: none;
+    margin: 0 auto 20px auto;
+    width: calc(100% - 40px);
+    max-width: 420px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .sobre-nos-texto h3 {
+    font-size: 1.5rem;
+  }
+
+  .sobre-nos-imagens {
+    width: 100%;
+    padding: 0 8%;
+  }
+
+  .sobre-nos-imagens img {
+    margin-left: 0;
+    width: 100%;
+    max-width: 520px;
+    border-radius: 12px;
+  }
+
+  /* Hero-content / grid -> empilha colunas */
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 0 4%;
+  }
+
+  /* Planos: cartões ocupam largura máxima com limite */
+  .planos-container {
+    gap: 20px;
+    padding: 0 4%;
+  }
+
+  .plano-card {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  /* Contato: já tem regra para <=768, reforço para mobile */
+  .contato-container {
+    flex-direction: column;
+    border-radius: 10px;
+  }
+
+  .contato-info {
+    padding: 28px;
+    text-align: center;
+  }
+
+  .contato-info h3 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Pequenos ajustes para reduzir quebramentos em telas muito estreitas */
+@media (max-width: 420px) {
+  .btn-hero {
+    width: 140px;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+
+  .hero-main h3 {
+    font-size: 1.4rem;
+  }
+
+  .carousel-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .carousel-text p {
+    font-size: 0.9rem;
+  }
+}

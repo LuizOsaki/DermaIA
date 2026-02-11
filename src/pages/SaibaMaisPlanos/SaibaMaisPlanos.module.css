@@ -1,0 +1,500 @@
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #0A2E6C 0%, #1e40af 100%);
+  color: white;
+  text-align: center;
+  padding: 100px 5% 80px;
+}
+
+.heroTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.heroSubtitle {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+.saiba_mais_titulo{
+  color: white;
+}
+
+h1{
+  color: white!important;
+}
+
+
+.planosSection {
+  text-align: center;
+  padding: 80px 5%;
+  background-color: #f9fafc;
+}
+
+.planosSection h2 {
+  color: #0A2E6C;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.planosSection p {
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+.planosContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* CARD */
+.planoCard {
+  width: 310px;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.planoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* TOPO AZUL */
+.planoTop {
+  background-color: #0A2E6C;
+  color: white;
+  padding: 25px 15px 20px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.planoTop h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* LISTA DE BENEFÍCIOS */
+.planoLista {
+  list-style: none;
+  text-align: left;
+  padding: 25px 35px;
+  flex: 1;
+  margin: 0;
+}
+
+.planoItem {
+  color: #0A142F;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.planoItem::before {
+  content: "✔";
+  color: #22c55e;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* RODAPÉ DO CARD */
+.planoBottom {
+  background-color: #0A2E6C;
+  text-align: center;
+  padding: 25px 0;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.planoBottom p {
+  margin: 0;
+  color: white;
+}
+
+.planoBottom span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: block;
+}
+
+/* Garante que nenhum pseudo-elemento antigo fique */
+.planoBottom::before,
+.planoBottom::after {
+  display: none !important;
+}
+
+
+
+/* Tabela de Comparação */
+.comparacaoSection {
+  padding: 100px 5%;
+  background: white;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #0A2E6C;
+  margin-bottom: 60px;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.comparacaoTable {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.comparacaoTable th,
+.comparacaoTable td {
+  padding: 18px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.comparacaoTable th {
+  background: #0A2E6C;
+  color: white;
+  font-weight: 600;
+}
+
+.comparacaoTable td {
+    content: "✔";
+  color: #22c55e;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.comparacaoTable td:first-child {
+  text-align: left;
+  font-weight: 500;
+  color: #333;
+}
+
+.precoRow td {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0A2E6C;
+  padding: 25px 18px;
+}
+
+
+
+/* Seção Contato */
+.contatoSection {
+  padding: 100px 5%;
+  background: #f8fbff;
+}
+
+.contatoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.contatoImagem {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.contatoImagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlayText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(10,46,108,0.85), transparent 70%);
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.overlayText h2 {
+  color: rgb(3, 5, 131);
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+/* Formulário */
+.contatoForm {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.formTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #0A2E6C;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.contatoForm input,
+.contatoForm select,
+.contatoForm textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contatoForm textarea {
+  grid-column: span 2;
+  resize: vertical;
+  min-height: 120px;
+}
+
+.enviarBtn {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  float: right;
+  margin-top: 20px;
+  transition: all 0.3s;
+}
+
+.enviarBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(34,197,94,0.3);
+}
+
+/* Responsivo */
+@media (max-width: 968px) {
+  .contatoGrid {
+    grid-template-columns: 1fr;
+  }
+  .overlayText { padding-left: 20px; }
+  .heroTitle { font-size: 2.3rem; }
+  .formRow { grid-template-columns: 1fr; }
+}
+/* ================================================================= */
+/*                    RESPONSIVIDADE COMPLETA                        */
+/* ================================================================= */
+
+/* TABLETS - até 1024px */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 80px 5% 60px;
+  }
+
+  .heroTitle {
+    font-size: 2.3rem;
+  }
+
+  .planosSection {
+    padding: 60px 4%;
+  }
+}
+
+/* MOBILE - até 768px */
+@media (max-width: 768px) {
+
+  /* HERO */
+  .hero {
+    padding: 70px 5% 50px;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.05rem;
+    max-width: 90%;
+  }
+
+  /* PLANOS */
+  .planosSection h2 {
+    font-size: 1.8rem;
+  }
+
+  .planoCard {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  /* TABELA */
+  .comparacaoSection {
+    padding: 60px 4%;
+  }
+
+  .comparacaoTable th,
+  .comparacaoTable td {
+    padding: 14px;
+  }
+
+  .precoRow td {
+    font-size: 1.2rem;
+  }
+
+  /* CONTATO */
+  .contatoGrid {
+    gap: 30px;
+  }
+
+  .contatoForm {
+    padding: 28px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .overlayText h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* MOBILE - até 480px */
+@media (max-width: 480px) {
+
+  /* HERO */
+  .hero {
+    padding: 60px 20px 50px;
+  }
+
+  .heroTitle {
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  /* PLANOS */
+  .planosSection {
+    padding: 50px 20px;
+  }
+
+  .planoCard {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .planoLista {
+    padding: 20px 24px;
+  }
+
+  .planoItem {
+    font-size: 0.9rem;
+  }
+
+  /* TABELA */
+  .sectionTitle {
+    font-size: 1.9rem;
+  }
+
+  .tableWrapper {
+    overflow-x: scroll;
+  }
+
+  .comparacaoTable {
+    min-width: 700px;
+  }
+
+  /* CONTATO */
+  .contatoForm {
+    padding: 22px;
+  }
+
+  .overlayText {
+    padding-left: 18px;
+  }
+
+  .overlayText h2 {
+    font-size: 1.6rem;
+  }
+
+  .enviarBtn {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+}
+
+/* EXTRA SMALL - até 360px */
+@media (max-width: 360px) {
+
+  .heroTitle {
+    font-size: 1.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.95rem;
+  }
+
+  .planoCard {
+    max-width: 100%;
+  }
+
+  .planoLista {
+    padding: 18px;
+  }
+
+  .overlayText h2 {
+    font-size: 1.4rem;
+  }
+
+  .contatoForm {
+    padding: 18px;
+  }
+
+  .formTitle {
+    font-size: 1.2rem;
+  }
+
+  .enviarBtn {
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+}

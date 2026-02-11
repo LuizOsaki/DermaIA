@@ -1,0 +1,82 @@
+/* HourlyForecast.module.css*/
+.container {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem 1.5rem 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  
+  /* ======= REMOVE A BARRA DE SCROLL EM TODOS OS NAVEGADORES ======= */
+  -ms-overflow-style: none;      /* IE e Edge */
+  scrollbar-width: none;         /* Firefox */
+}
+
+/* Esconde a barra no Chrome, Safari e Opera */
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card individual */
+.card {
+  min-width: 100px;
+  padding: 1.2rem 0.8rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  margin: 0.4rem auto;
+  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.4));
+}
+
+.time {
+  font-size: 0.9rem;
+  color: #88eaff;
+  font-weight: 600;
+}
+
+.temp {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0.4rem 0;
+}
+
+.rain {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: 0.3rem;
+}
+
+/* Efeito de fade nas laterais */
+.container::before,
+.container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.container::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(10, 29, 86, 0.8), transparent);
+}
+
+.container::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(10, 29, 86, 0.8), transparent);
+}

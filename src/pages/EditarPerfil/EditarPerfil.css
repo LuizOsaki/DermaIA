@@ -1,0 +1,257 @@
+/* =============================
+   CONTAINER GERAL
+============================= */
+.perfil-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #eef3ff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+/* =============================
+   BOX DO PERFIL
+============================= */
+.perfil-box {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.09);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.perfil-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #3b4a8a;
+  margin-bottom: 25px;
+}
+
+/* =============================
+   FOTO DE PERFIL
+============================= */
+.perfil-photo-area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.perfil-photo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.perfil-photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #3b4a8a;
+  background: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.perfil-photo-button {
+  margin-top: 12px;
+  background: #3b4a8a;
+  color: white;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.perfil-photo-button:hover {
+  background: #2d3a75;
+}
+
+.hidden-input {
+  display: none;
+}
+
+/* =============================
+   FORMULÁRIO
+============================= */
+.perfil-form {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.perfil-input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.perfil-input-group label {
+  font-size: 14px;
+  color: #3b4a8a;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.perfil-input-group input {
+  padding: 12px 14px;
+  border: 2px solid #c7d2fe;
+  border-radius: 12px;
+  background: #f7f9ff;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.perfil-input-group input:focus {
+  border-color: #3b4a8a;
+  background: #ffffff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 74, 138, 0.2);
+}
+
+.perfil-input-group input:disabled {
+  background: #e5e7eb;
+  cursor: not-allowed;
+}
+
+/* =============================
+   BOTÃO SALVAR
+============================= */
+.perfil-save-btn {
+  width: 100%;
+  padding: 14px;
+  background: #3b4a8a;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 14px;
+  cursor: pointer;
+  border: none;
+  margin-top: 10px;
+  transition: 0.25s ease;
+}
+
+.perfil-save-btn:hover {
+  background: #2d3a75;
+  transform: translateY(-2px);
+}
+
+.perfil-save-btn:active {
+  transform: translateY(0);
+}
+
+/* =============================
+   RESPONSIVIDADE
+============================= */
+
+@media (max-width: 500px) {
+  .perfil-box {
+    padding: 25px;
+    max-width: 90%;
+  }
+
+  .perfil-photo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .perfil-save-btn {
+    font-size: 15px;
+  }
+}
+/* =====================================
+   📱 RESPONSIVIDADE MOBILE COMPLETA
+===================================== */
+@media (max-width: 500px) {
+
+  /* Container geral */
+  .perfil-container {
+    padding: 20px 12px; /* reduz espaço lateral */
+    align-items: flex-start;
+  }
+
+  /* Box do perfil */
+  .perfil-box {
+    padding: 22px 18px;
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  /* Título */
+  .perfil-title {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+
+  /* Foto */
+  .perfil-photo {
+    width: 95px;
+    height: 95px;
+  }
+
+  .perfil-photo-button {
+    font-size: 13px;
+    padding: 7px 16px;
+  }
+
+  /* Inputs */
+  .perfil-input-group label {
+    font-size: 13px;
+  }
+
+  .perfil-input-group input {
+    font-size: 14px;
+    padding: 11px 12px;
+  }
+
+  /* Botão salvar */
+  .perfil-save-btn {
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+}
+
+/* =====================================
+   📱 MOBILE SUPER PEQUENO (até 360px)
+===================================== */
+@media (max-width: 360px) {
+  
+  .perfil-box {
+    padding: 18px 14px;
+  }
+
+  .perfil-title {
+    font-size: 18px;
+  }
+
+  .perfil-photo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .perfil-input-group input {
+    font-size: 13px;
+    padding: 10px 11px;
+  }
+
+  .perfil-save-btn {
+    font-size: 13px;
+    padding: 10px;
+  }
+}

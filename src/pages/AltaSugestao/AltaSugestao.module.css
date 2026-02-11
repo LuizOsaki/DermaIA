@@ -1,0 +1,202 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --danger: #dc2626;
+  --primary: #2563eb;
+  --accent: #3b82f6;
+  --border: #e2e8f0;
+  --radius: 18px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* Wrapper geral */
+.wrapper {
+  background: var(--card);
+  margin: 40px auto;
+  max-width: 1100px;
+  padding: 48px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    padding: 32px;
+  }
+}
+
+/* Títulos */
+.wrapper h1 {
+  color: var(--danger)!important;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 20px 0 12px;
+}
+
+h3 {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.intro {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Colunas */
+.left {}
+.right {
+  background: #f8fafc;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+/* Lista */
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  margin-bottom: 14px;
+  display: flex;
+  gap: 10px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.list li span {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Note (empatia) */
+.note {
+  background: #fef3f3;
+  padding: 14px 18px;
+  border-left: 4px solid var(--danger);
+  color: var(--muted);
+  border-radius: 10px;
+  margin-top: 18px;
+}
+
+
+.map {
+  height: 280px;
+  background: #dde4ee;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 20px 0 24px;
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+  70% { transform: translate(-50%, -50%) scale(1.8); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
+
+/* Clínica */
+.clinicBox {}
+.clinicTitle {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.clinicList {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 8px;
+}
+
+.clinicList li {
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+
+.smallText {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Botões */
+.btnPrimary {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.25s;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+.buttonsLeft {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.btnSecondary {
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+}
+
+.btnGhost {
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #1e293b;
+  text-decoration: none;
+}
+
+/* Guia */
+.guide {
+  grid-column: 1 / -1;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.guide ol li {
+  margin-bottom: 10px;
+}
+
+/* Rodapé de alerta */
+.alertFooter {
+  grid-column: 1 / -1;
+  margin-top: 28px;
+  padding: 16px 20px;
+  background: #fff8e1;
+  border-left: 4px solid #facc15;
+  color: #92400e;
+  border-radius: 10px;
+  line-height: 1.55;
+}

@@ -1,0 +1,122 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 24px;
+  margin: 2rem auto;
+  max-width: 1000px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.left, .right {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.info { color: white!important; }
+.city { font-size: 2rem; margin: 0; color: #00d4ff; }
+.temp { font-size: 5.5rem; font-weight: 300; margin: 0.5rem 0; }
+.range { font-size: 1.4rem; color: #88eaff; }
+.feels, .time { margin: 0.4rem 0; color: #ccc; }
+
+.condition {
+  text-align: center;
+  margin-top: 1rem;
+}
+.condition img { width: 100px; }
+.condition h3 { margin: 0.5rem 0; color: white; }
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: #ccc;
+}
+.detail:last-child { border: none; }
+.detail span:last-child { color: white; font-weight: 600; }
+
+.particlesOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.particles {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.weatherIcon {
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.4));
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Tablets e telas médias */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .condition img {
+    width: 80px;
+  }
+
+  .temp {
+    font-size: 4.5rem;
+  }
+
+  .city {
+    font-size: 1.7rem;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .container {
+    padding: 1.2rem;
+    border-radius: 18px;
+  }
+
+  .temp {
+    font-size: 3.6rem;
+  }
+
+  .range {
+    font-size: 1.1rem;
+  }
+
+  .feels, .time {
+    font-size: 0.9rem;
+  }
+
+  .condition img {
+    width: 70px;
+  }
+
+  .condition h3 {
+    font-size: 1rem;
+  }
+
+  .detail {
+    font-size: 0.9rem;
+    padding: 0.6rem 0;
+  }
+}

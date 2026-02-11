@@ -1,0 +1,366 @@
+/* ============================
+   CONTAINER PRINCIPAL
+============================ */
+.page-cadastro__container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #dfe7ff, #eef3ff);
+  backdrop-filter: blur(6px);
+}
+
+/* ============================
+   LADO ESQUERDO
+============================ */
+.page-cadastro__left {
+  width: 35%; 
+  background: url('/assets/img-fundo.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Robô maior e mais perto */
+.page-cadastro__robot {
+  width: 100%;
+  max-width: 600px;
+  transform: translateX(20px); /* puxa o robô mais pra perto */
+  animation: float 4s ease-in-out infinite;
+}
+
+/* animação */
+@keyframes float {
+  0% { transform: translateY(0px) translateX(20px); }
+  50% { transform: translateY(-14px) translateX(20px); }
+  100% { transform: translateY(0px) translateX(20px); }
+}
+
+/* ============================
+   LADO DIREITO
+============================ */
+.page-cadastro__right {
+  width: 65%;                    /* ocupa mais espaço */
+  display: flex;
+  justify-content: center;       /* centraliza o card */
+  align-items: center;
+  background: #e7ecfa;
+  padding: 40px 0;
+}
+
+/* ============================
+   CARD PRINCIPAL
+============================ */
+.page-cadastro__card {
+  width: 100%;                    /* agora fica quase total */
+  max-width: 856px;              /* limite visual bonito */
+  background: white;
+  padding: 45px;
+  border-radius: 16px;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.10);
+  position: relative;
+}
+
+/* ============================
+   CARD PREMIUM ★
+============================ */
+
+/* Logo */
+.page-cadastro__logo {
+  width: 130px;
+  display: block;
+  margin: 0 auto 12px;
+}
+
+/* Título */
+.page-cadastro__title {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #0c1c3c;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+/* ============================
+   FORMULÁRIO
+============================ */
+.page-cadastro__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.page-cadastro__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Inputs Premium */
+.page-cadastro__input-group input,
+.page-cadastro__input-group select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd3e9;
+  font-size: 15px;
+  background: #f8faff;
+  transition: 0.2s border;
+}
+
+.page-cadastro__input-group input:focus,
+.page-cadastro__input-group select:focus {
+  border-color: #4c70ff;
+  outline: none;
+}
+
+/* 2 campos lado a lado */
+.page-cadastro__two-fields {
+  display: flex;
+  justify-content: center; /* CENTRALIZA */
+  gap: 25px;
+  width: 100%;
+}
+
+
+/* Checkboxes */
+.page-cadastro__check-area {
+  display: flex;
+  justify-content: center; /* lado a lado */
+  align-items: center;
+  gap: 30px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.page-cadastro__check-area label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+/* Botão principal */
+.page-cadastro__btn-submit {
+  width: 100%;
+  padding: 14px;
+  background: #0a2b73;
+  color: #fff;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(10, 43, 115, 0.35);
+  transition: 0.3s;
+}
+
+.page-cadastro__btn-submit:hover {
+  background: #083074;
+  transform: translateY(-2px);
+}
+
+/* Divider */
+.page-cadastro__divider {
+  text-align: center;
+  color: #555;
+  margin: 25px 0 15px;
+  font-size: 14px;
+}
+
+/* Login social */
+.page-cadastro__social-row {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.page-cadastro__btn-google,
+.page-cadastro__btn-icloud {
+  flex: 1;
+  padding: 12px 0;
+  border-radius: 18px;
+  border: 1px solid #cdd3df;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.25s;
+}
+
+.page-cadastro__btn-google:hover,
+.page-cadastro__btn-icloud:hover {
+  background: #f1f4ff;
+  transform: translateY(-2px);
+}
+
+/* ============================
+   RESPONSIVIDADE
+============================ */
+@media (max-width: 980px) {
+  .page-cadastro__left {
+    display: none;
+  }
+  .page-cadastro__right {
+    width: 100%;
+  }
+  .page-cadastro__card {
+    width: 92%;
+  }
+}
+
+.page-cadastro__social-row button img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  margin-right: 8px;
+}
+
+/* Quando tiver erro, a borda fica vermelha */
+.page-cadastro__input-group.error input,
+.page-cadastro__input-group.error select {
+  border: 2px solid #ff4d4d;
+  background: #ffecec;
+}
+
+/* Caixa de senha também fica vermelha */
+.page-cadastro__input-group.error .page-cadastro__password-box input {
+  border: 2px solid #ff4d4d;
+  background: #ffecec;
+}
+
+/* Texto dos labels vermelhos */
+.error-text {
+  color: #ff4d4d !important;
+}
+
+/* Ajuste para caixa de senha (olhinho alinhado) */
+.page-cadastro__password-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.page-cadastro__password-box input {
+  width: 100%;
+  padding-right: 35px;
+}
+
+.page-cadastro__show-pass {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ============================
+   MENSAGEM DE ERRO / SUCESSO
+============================ */
+.page-cadastro__msg {
+  width: 100%;
+  max-width: 360px; /* impede quebrar o layout */
+  padding: 12px;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  animation: fadeIn 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Sucesso */
+.page-cadastro__msg.sucesso {
+  background: #d8ffe0;
+  color: #1d8a3a;
+  border: 1px solid #1d8a3a50;
+}
+
+/* Erro */
+.page-cadastro__msg.erro {
+  background: #ffe0e0;
+  color: #a30000;
+  border: 1px solid #a3000050;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================
+   RESPONSIVIDADE MOBILE REAL
+============================ */
+
+/* Telas até 980px */
+@media (max-width: 980px) {
+  .page-cadastro__left {
+    display: none;
+  }
+
+  .page-cadastro__right {
+    width: 100%;
+    padding: 20px 0;
+    background: #eef2ff;
+  }
+
+  .page-cadastro__card {
+    width: 92%;
+    padding: 30px 22px;
+  }
+}
+
+/* Telas até 768px (tablet + celulares grandes) */
+@media (max-width: 768px) {
+  .page-cadastro__two-fields {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .page-cadastro__check-area {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .page-cadastro__social-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .page-cadastro__btn-google,
+  .page-cadastro__btn-icloud {
+    width: 100%;
+  }
+
+  .page-cadastro__card {
+    padding: 28px 20px;
+  }
+
+  .page-cadastro__title {
+    font-size: 20px;
+  }
+}
+
+/* Telas até 480px (celulares pequenos) */
+@media (max-width: 480px) {
+  .page-cadastro__card {
+    width: 94%;
+    padding: 24px 18px;
+  }
+
+  .page-cadastro__title {
+    font-size: 18px;
+  }
+
+  .page-cadastro__input-group input,
+  .page-cadastro__input-group select {
+    font-size: 14px;
+    padding: 11px;
+  }
+
+  .page-cadastro__btn-submit {
+    font-size: 15px;
+    padding: 12px;
+  }
+}

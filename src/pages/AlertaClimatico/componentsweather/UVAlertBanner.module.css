@@ -1,0 +1,44 @@
+.banner {
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 1.2rem 2rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: pulse 3s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.banner strong {
+  font-size: 1.4rem;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.robot {
+  font-size: 1rem;
+  opacity: 0.9;
+  font-style: italic;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.robot::before {
+  content: '';
+  font-size: 1.4rem;
+}
+
+/* Animação sutil de alerta */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
